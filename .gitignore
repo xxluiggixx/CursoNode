@@ -40,6 +40,7 @@ build/Release
 # Dependency directories
 node_modules/
 ./03-bases-de-node/node_modules/
+./03-bases-de-node/output/*.txt
 jspm_packages/
 
 # TypeScript v1 declaration files

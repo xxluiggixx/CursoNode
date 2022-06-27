@@ -1,18 +1,20 @@
 /* const { writeFileSync } = require("fs") */
 const fs = require('fs');
-const createTableFile=async(base=5)=>{
+const createTableFile=async(base=5,listar=false,hasta=10)=>{
 
     try {
         
-        console.log('=================================')
-        console.log(`          Tabla del ${base}`)
-        console.log('=================================')
-        let salida
-        for (let index = 1; index < 11; index++) {
+        let salida=''
+        for (let index = 1; index <= hasta; index++) {
             salida+=` ${base} x ${index} = ${base*index}\n`;
         }
-        fs.writeFileSync(`Tabla_${base}`,salida);
-
+        fs.writeFileSync(`./output/Tabla_${base}.txt`,salida);
+        if (listar){
+            console.log('=================================')
+            console.log(`          Tabla del ${base}`)
+            console.log('=================================')
+            console.log(salida);
+        }
         return `Tabla_${base}`
     } catch (error) {
         throw error
